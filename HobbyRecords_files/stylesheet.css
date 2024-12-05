@@ -1051,16 +1051,10 @@ td
 	background:#FFF2CC;
 	mso-pattern:black none;}
 .xl240
-	{mso-style-parent:style18;
-	color:#0563C1;
-	text-decoration:underline;
-	text-underline-style:single;
-	text-align:center;}
-.xl241
 	{mso-style-parent:style0;
 	mso-number-format:0%;
 	text-align:center;}
-.xl242
+.xl241
 	{mso-style-parent:style19;
 	color:windowtext;
 	font-size:10.0pt;
@@ -1070,7 +1064,7 @@ td
 	border-right:1.0pt solid windowtext;
 	border-bottom:none;
 	border-left:1.0pt solid windowtext;}
-.xl243
+.xl242
 	{mso-style-parent:style19;
 	color:black;
 	font-size:10.0pt;
@@ -1081,7 +1075,7 @@ td
 	border-left:none;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl244
+.xl243
 	{mso-style-parent:style19;
 	color:black;
 	text-align:center;
@@ -1091,7 +1085,7 @@ td
 	border-left:none;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl245
+.xl244
 	{mso-style-parent:style19;
 	color:windowtext;
 	font-size:10.0pt;
@@ -1101,7 +1095,7 @@ td
 	border-right:1.0pt solid windowtext;
 	border-bottom:1.0pt solid windowtext;
 	border-left:1.0pt solid windowtext;}
-.xl246
+.xl245
 	{mso-style-parent:style19;
 	color:black;
 	mso-number-format:0;
@@ -1111,7 +1105,7 @@ td
 	border-left:1.0pt solid black;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl247
+.xl246
 	{mso-style-parent:style19;
 	color:black;
 	text-align:center;
@@ -1121,7 +1115,7 @@ td
 	border-left:none;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl248
+.xl247
 	{mso-style-parent:style19;
 	color:black;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0\.0";
@@ -1132,27 +1126,27 @@ td
 	border-left:none;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl249
+.xl248
 	{mso-style-parent:style19;
 	color:black;
 	border-top:1.0pt solid black;
 	border-right:.5pt solid black;
 	border-bottom:.5pt solid black;
+	border-left:1.0pt solid black;
+	background:#FEF2CB;
+	mso-pattern:#FEF2CB none;}
+.xl249
+	{mso-style-parent:style19;
+	color:black;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:1.0pt solid black;
 	border-left:1.0pt solid black;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
 .xl250
 	{mso-style-parent:style19;
 	color:black;
-	border-top:.5pt solid black;
-	border-right:.5pt solid black;
-	border-bottom:1.0pt solid black;
-	border-left:1.0pt solid black;
-	background:#FEF2CB;
-	mso-pattern:#FEF2CB none;}
-.xl251
-	{mso-style-parent:style19;
-	color:black;
 	text-align:center;
 	border-top:1.0pt solid black;
 	border-right:.5pt solid black;
@@ -1160,7 +1154,7 @@ td
 	border-left:none;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
-.xl252
+.xl251
 	{mso-style-parent:style19;
 	color:black;
 	text-align:center;
@@ -1170,7 +1164,7 @@ td
 	border-left:none;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
-.xl253
+.xl252
 	{mso-style-parent:style19;
 	color:black;
 	mso-number-format:0%;
@@ -1179,6 +1173,17 @@ td
 	border-right:.5pt solid black;
 	border-bottom:.5pt solid black;
 	border-left:none;
+	background:#E2EFD9;
+	mso-pattern:#E2EFD9 none;}
+.xl253
+	{mso-style-parent:style19;
+	color:black;
+	mso-number-format:0%;
+	text-align:center;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:1.0pt solid black;
+	border-left:.5pt solid black;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
 .xl254
@@ -1186,24 +1191,13 @@ td
 	color:black;
 	mso-number-format:0%;
 	text-align:center;
-	border-top:.5pt solid black;
-	border-right:.5pt solid black;
-	border-bottom:1.0pt solid black;
-	border-left:.5pt solid black;
-	background:#E2EFD9;
-	mso-pattern:#E2EFD9 none;}
-.xl255
-	{mso-style-parent:style19;
-	color:black;
-	mso-number-format:0%;
-	text-align:center;
 	border-top:1.0pt solid black;
 	border-right:.5pt solid black;
 	border-bottom:.5pt solid black;
 	border-left:.5pt solid black;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
-.xl256
+.xl255
 	{mso-style-parent:style19;
 	color:black;
 	mso-number-format:0%;
@@ -1214,3 +1208,9 @@ td
 	border-left:.5pt solid black;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
+.xl256
+	{mso-style-parent:style18;
+	color:#0563C1;
+	text-decoration:underline;
+	text-underline-style:single;
+	text-align:center;}
