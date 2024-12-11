@@ -143,45 +143,27 @@ td
 .xl74
 	{mso-style-parent:style16;
 	color:black;
+	text-align:center;
 	border-top:1.0pt solid black;
 	border-right:.5pt solid black;
 	border-bottom:.5pt solid black;
-	border-left:1.0pt solid black;
+	border-left:none;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
 .xl75
 	{mso-style-parent:style16;
 	color:black;
+	mso-number-format:0%;
 	text-align:center;
 	border-top:1.0pt solid black;
 	border-right:.5pt solid black;
 	border-bottom:.5pt solid black;
-	border-left:none;
+	border-left:.5pt solid black;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
 .xl76
 	{mso-style-parent:style16;
 	color:black;
-	mso-number-format:0%;
-	text-align:center;
-	border-top:1.0pt solid black;
-	border-right:.5pt solid black;
-	border-bottom:.5pt solid black;
-	border-left:.5pt solid black;
-	background:#FEF2CB;
-	mso-pattern:#FEF2CB none;}
-.xl77
-	{mso-style-parent:style16;
-	color:black;
-	border-top:.5pt solid black;
-	border-right:.5pt solid black;
-	border-bottom:1.0pt solid black;
-	border-left:1.0pt solid black;
-	background:#FEF2CB;
-	mso-pattern:#FEF2CB none;}
-.xl78
-	{mso-style-parent:style16;
-	color:black;
 	text-align:center;
 	border-top:.5pt solid black;
 	border-right:.5pt solid black;
@@ -189,7 +171,7 @@ td
 	border-left:none;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
-.xl79
+.xl77
 	{mso-style-parent:style16;
 	color:black;
 	mso-number-format:0%;
@@ -200,7 +182,7 @@ td
 	border-left:.5pt solid black;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
-.xl80
+.xl78
 	{mso-style-parent:style0;
 	text-align:left;
 	border-top:1.0pt solid windowtext;
@@ -209,10 +191,10 @@ td
 	border-left:1.0pt solid windowtext;
 	background:#DDEBF7;
 	mso-pattern:black none;}
-.xl81
+.xl79
 	{mso-style-parent:style0;
 	text-align:left;}
-.xl82
+.xl80
 	{mso-style-parent:style0;
 	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
 	text-align:left;
@@ -221,6 +203,30 @@ td
 	border-bottom:1.0pt solid windowtext;
 	border-left:none;
 	background:#DDEBF7;
+	mso-pattern:black none;}
+.xl81
+	{mso-style-parent:style16;
+	color:windowtext;
+	font-size:10.0pt;
+	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	text-align:left;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E2EFDA;
+	mso-pattern:black none;}
+.xl82
+	{mso-style-parent:style16;
+	color:windowtext;
+	font-size:10.0pt;
+	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	text-align:left;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#E2EFDA;
 	mso-pattern:black none;}
 .xl83
 	{mso-style-parent:style16;
@@ -232,7 +238,7 @@ td
 	border-right:1.0pt solid windowtext;
 	border-bottom:none;
 	border-left:1.0pt solid windowtext;
-	background:#E2EFDA;
+	background:#FFF2CC;
 	mso-pattern:black none;}
 .xl84
 	{mso-style-parent:style16;
@@ -244,38 +250,37 @@ td
 	border-right:1.0pt solid windowtext;
 	border-bottom:1.0pt solid windowtext;
 	border-left:1.0pt solid windowtext;
-	background:#E2EFDA;
+	background:#FFF2CC;
 	mso-pattern:black none;}
 .xl85
-	{mso-style-parent:style16;
-	color:windowtext;
-	font-size:10.0pt;
-	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
-	text-align:left;
-	border-top:1.0pt solid windowtext;
-	border-right:1.0pt solid windowtext;
-	border-bottom:none;
-	border-left:1.0pt solid windowtext;
-	background:#FFF2CC;
-	mso-pattern:black none;}
-.xl86
-	{mso-style-parent:style16;
-	color:windowtext;
-	font-size:10.0pt;
-	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
-	text-align:left;
-	border-top:none;
-	border-right:1.0pt solid windowtext;
-	border-bottom:1.0pt solid windowtext;
-	border-left:1.0pt solid windowtext;
-	background:#FFF2CC;
-	mso-pattern:black none;}
-.xl87
 	{mso-style-parent:style0;
 	text-align:center;
 	white-space:normal;}
-.xl88
+.xl86
 	{mso-style-parent:style0;
 	mso-number-format:0%;
 	text-align:center;
 	white-space:normal;}
+.xl87
+	{mso-style-parent:style0;
+	mso-number-format:"Medium Time";}
+.xl88
+	{mso-style-parent:style16;
+	color:black;
+	mso-number-format:0;
+	border-top:1.0pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:.5pt solid black;
+	border-left:1.0pt solid black;
+	background:#FEF2CB;
+	mso-pattern:#FEF2CB none;}
+.xl89
+	{mso-style-parent:style16;
+	color:black;
+	mso-number-format:0;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:1.0pt solid black;
+	border-left:1.0pt solid black;
+	background:#FEF2CB;
+	mso-pattern:#FEF2CB none;}
