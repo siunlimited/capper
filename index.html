@@ -12,34 +12,30 @@
 
         .container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             height: 100vh;
         }
 
-        .sidenav {
+        .topnav {
             background-color: #f4f4f4;
-            width: 150px;
-            padding-top: 20px;
             display: flex;
-            flex-direction: column;
-            border-right: 1px solid #ccc;
+            justify-content: flex-start;
+            border-bottom: 1px solid #ccc;
         }
 
-        .sidenav a {
+        .topnav a {
             text-decoration: none;
             color: #333;
             padding: 10px 15px;
             display: block;
-            border-bottom: 1px solid #ddd;
         }
 
-        .sidenav a:hover {
+        .topnav a:hover {
             background-color: #ddd;
         }
 
         .main {
             flex: 1;
-            padding: 10px;
             overflow-y: auto;
         }
 
@@ -50,14 +46,13 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
+            .topnav {
+                flex-wrap: wrap;
             }
 
-            .sidenav {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid #ccc;
+            .topnav a {
+                flex: 1 1 auto;
+                text-align: center;
             }
         }
     </style>
@@ -65,7 +60,7 @@
 <body>
 
 <div class="container">
-    <div class="sidenav">
+    <div class="topnav">
         <a href="NFL_Web.htm" target="contentFrame">NFL</a>
         <a href="NCAAF_Web.htm" target="contentFrame">CFB</a>
         <a href="NCAAB_Web.htm" target="contentFrame">NCAAB</a>
