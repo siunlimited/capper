@@ -285,34 +285,14 @@ td
 	mso-number-format:0%;}
 .xl91
 	{mso-style-parent:style0;
-	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
-	text-align:center;
-	border-top:1.0pt solid windowtext;
-	border-right:none;
-	border-bottom:1.0pt solid windowtext;
-	border-left:none;
-	background:#DDEBF7;
-	mso-pattern:black none;}
-.xl92
-	{mso-style-parent:style0;
-	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
-	text-align:center;
-	border-top:1.0pt solid windowtext;
-	border-right:1.0pt solid windowtext;
-	border-bottom:1.0pt solid windowtext;
-	border-left:none;
-	background:#DDEBF7;
-	mso-pattern:black none;}
-.xl93
-	{mso-style-parent:style0;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0";
 	text-align:center;}
-.xl94
+.xl92
 	{mso-style-parent:style0;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0";
 	text-align:center;
 	white-space:normal;}
-.xl95
+.xl93
 	{mso-style-parent:style16;
 	color:black;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0";
@@ -323,7 +303,7 @@ td
 	border-left:none;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl96
+.xl94
 	{mso-style-parent:style16;
 	color:black;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0";
@@ -334,7 +314,7 @@ td
 	border-left:none;
 	background:#E2EFD9;
 	mso-pattern:#E2EFD9 none;}
-.xl97
+.xl95
 	{mso-style-parent:style16;
 	color:black;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0";
@@ -345,7 +325,7 @@ td
 	border-left:none;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
-.xl98
+.xl96
 	{mso-style-parent:style16;
 	color:black;
 	mso-number-format:"\\+0\.0\;\\-0\.0\;0";
@@ -356,3 +336,23 @@ td
 	border-left:none;
 	background:#FEF2CB;
 	mso-pattern:#FEF2CB none;}
+.xl97
+	{mso-style-parent:style0;
+	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	text-align:center;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#DDEBF7;
+	mso-pattern:black none;}
+.xl98
+	{mso-style-parent:style0;
+	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	text-align:center;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#DDEBF7;
+	mso-pattern:black none;}
