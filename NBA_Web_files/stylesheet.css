@@ -437,6 +437,15 @@ td
 	border-left:.5pt solid windowtext;}
 .xl104
 	{mso-style-parent:style0;
+	color:white;
+	mso-number-format:0%;
+	text-align:center;}
+.xl105
+	{mso-style-parent:style0;
+	color:white;
+	mso-number-format:0%;}
+.xl106
+	{mso-style-parent:style0;
 	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
 	text-align:center;
 	border-top:1.0pt solid windowtext;
@@ -445,7 +454,7 @@ td
 	border-left:none;
 	background:#DDEBF7;
 	mso-pattern:black none;}
-.xl105
+.xl107
 	{mso-style-parent:style0;
 	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
 	text-align:center;
@@ -455,12 +464,3 @@ td
 	border-left:none;
 	background:#DDEBF7;
 	mso-pattern:black none;}
-.xl106
-	{mso-style-parent:style0;
-	color:white;
-	mso-number-format:0%;
-	text-align:center;}
-.xl107
-	{mso-style-parent:style0;
-	color:white;
-	mso-number-format:0%;}
