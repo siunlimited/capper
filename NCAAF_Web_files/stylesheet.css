@@ -338,7 +338,7 @@ td
 	mso-pattern:#FEF2CB none;}
 .xl97
 	{mso-style-parent:style0;
-	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	mso-number-format:"\[$-409\]m\/d\/yy\\ h\:mm\\ AM\/PM\;\@";
 	text-align:center;
 	border-top:1.0pt solid windowtext;
 	border-right:none;
@@ -348,7 +348,7 @@ td
 	mso-pattern:black none;}
 .xl98
 	{mso-style-parent:style0;
-	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	mso-number-format:"\[$-409\]m\/d\/yy\\ h\:mm\\ AM\/PM\;\@";
 	text-align:center;
 	border-top:1.0pt solid windowtext;
 	border-right:1.0pt solid windowtext;
