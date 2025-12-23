@@ -8,6 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            height: 100vh;
         }
 
         .container {
@@ -36,16 +37,14 @@
 
         .main {
             flex: 1;
-            overflow: hidden; /* Prevents content from spilling below footer */
+            overflow: hidden; /* main area contains the iframe */
         }
 
         iframe {
             width: 100%;
-            height: calc(100vh - 140px); 
-            /* 140px = approx height of nav + footer; adjust if needed */
+            height: 100%;
             border: none;
             display: block;
-            overflow-y: auto;
         }
 
         /* Footer */
@@ -68,10 +67,6 @@
             .topnav a {
                 flex: 1 1 auto;
                 text-align: center;
-            }
-
-            iframe {
-                height: calc(100vh - 180px); /* More space for wrapped nav */
             }
         }
     </style>
