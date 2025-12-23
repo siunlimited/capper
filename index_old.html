@@ -3,143 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capper Results and Tracking</title>
+    <title>Public Betting Percentages</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        /* Top Navigation */
-        .topnav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #333;
-            overflow: hidden;
+
+        .container {
             display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            z-index: 1000;
+            flex-direction: column;
+            height: 100vh;
         }
+
+        .topnav {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 1px solid #ccc;
+        }
+
         .topnav a {
-            color: white;
             text-decoration: none;
-            padding: 14px 20px;
-            text-align: center;
+            color: #333;
+            padding: 10px 15px;
+            display: block;
         }
+
         .topnav a:hover {
             background-color: #ddd;
-            color: black;
         }
-        /* Side Navigation */
-        .sidenav {
-            position: fixed;
-            top: 50px;
-            left: 0;
-            height: calc(100vh - 50px);
-            width: 200px;
-            background-color: #f4f4f4;
-            padding-top: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .sidenav .link {
-            display: block;
-            color: #333;
-            padding: 8px 16px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .sidenav .link:hover {
-            background-color: #ddd;
-            color: #000;
-        }
-        /* Expandable Links */
-        .sublinks {
-            display: none;
-            padding-left: 20px;
-        }
-        .sublinks a {
-            display: block;
-            color: #555;
-            padding: 6px 16px;
-            text-decoration: none;
-        }
-        .sublinks a:hover {
-            background-color: #eee;
-        }
-        /* Main Content */
+
         .main {
-            margin-top: 50px;
-            margin-left: 200px;
-            height: calc(100vh - 50px);
-            overflow: hidden;
+            flex: 1;
+            overflow-y: auto;
         }
+
         iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
+
+        @media (max-width: 768px) {
+            .topnav {
+                flex-wrap: wrap;
+            }
+
+            .topnav a {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation -->
+<div class="container">
     <div class="topnav">
-        <a href="" class="frame-link">Blank</a>
-        <a href="capper.news" class="frame-link">Home</a>
-        <a href="https://google.com" class="frame-link">About</a>
-        <a href="https://google.com" class="frame-link">Links</a>
-        <a href="https://google.com" class="frame-link">Top Link 4</a>
-        <a href="https://google.com" class="frame-link">Top Link 5</a>
+        <a href="NFL_Web.htm" target="contentFrame">NFL</a>
+        <a href="NCAAF_Web.htm" target="contentFrame">CFB</a>
+        <a href="NCAAB_Web.htm" target="contentFrame">NCAAB</a>
+        <a href="NBA_Web.htm" target="contentFrame">NBA</a>
+        <a href="NHL_Web.htm" target="contentFrame">NHL</a>
+        <a href="MLB_Web.htm" target="contentFrame">MLB</a>
     </div>
-
-    <!-- Side Navigation -->
-    <div class="sidenav">
-        <div class="link" onclick="toggleSublinks('sublink1')">Hobby</div>
-        <div id="sublink1" class="sublinks">
-            <a href="HobbyRecords.html" class="frame-link">Overall Records</a>
-            <a href="https://foxnews.com" class="frame-link">Complete Results</a>
-        </div>
-
-        <div class="link" onclick="toggleSublinks('sublink2')">TSP</div>
-        <div id="sublink2" class="sublinks">
-            <a href="https://discord.com/channels/1281080687604007022/1281080687604007025" class="frame-link">Overall Records</a>
-            <a href="https://foxnews.com" class="frame-link">Complete Results</a>
-        </div>
-
-        <div class="link" onclick="toggleSublinks('sublink3')">Ducky</div>
-        <div id="sublink3" class="sublinks">
-            <a href="https://discord.com/channels/1281080687604007022/1281080687604007025" class="frame-link">Overall Records</a>
-            <a href="https://foxnews.com" class="frame-link">Complete Results</a>
-        </div>
-    </div>
-
-    <!-- Main Content Area -->
     <div class="main">
-        <iframe name="main-frame" id="main-frame" src="https://example.com"></iframe>
+        <iframe name="contentFrame" src="Home.html"></iframe>
     </div>
+</div>
 
-    <script>
-        // JavaScript to toggle sublinks
-        function toggleSublinks(id) {
-            const sublinks = document.getElementById(id);
-            if (sublinks.style.display === "block") {
-                sublinks.style.display = "none";
-            } else {
-                sublinks.style.display = "block";
-            }
-        }
-
-        // Enforce all links open in iframe
-        const links = document.querySelectorAll('.frame-link');
-        const iframe = document.getElementById('main-frame');
-
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default navigation
-                iframe.src = this.href; // Set iframe source to link href
-            });
-        });
-    </script>
 </body>
 </html>
