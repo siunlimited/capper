@@ -36,16 +36,19 @@
 
         .main {
             flex: 1;
-            overflow-y: auto;
+            overflow: hidden; /* Prevents content from spilling below footer */
         }
 
         iframe {
             width: 100%;
-            height: 100%;
+            height: calc(100vh - 140px); 
+            /* 140px = approx height of nav + footer; adjust if needed */
             border: none;
+            display: block;
+            overflow-y: auto;
         }
 
-        /* TrustHub / SMS disclosure footer */
+        /* Footer */
         .footer {
             background: #f9f9f9;
             border-top: 1px solid #ddd;
@@ -66,6 +69,10 @@
                 flex: 1 1 auto;
                 text-align: center;
             }
+
+            iframe {
+                height: calc(100vh - 180px); /* More space for wrapped nav */
+            }
         }
     </style>
 </head>
@@ -79,16 +86,18 @@
         <a href="NBA_Web.htm" target="contentFrame">NBA</a>
         <a href="NHL_Web.htm" target="contentFrame">NHL</a>
         <a href="MLB_Web.htm" target="contentFrame">MLB</a>
-	<a href="About.htm" target="contentFrame">About</a>
+        <a href="About.htm" target="contentFrame">About</a>
     </div>
+
     <div class="main">
         <iframe name="contentFrame" src="Home.html"></iframe>
     </div>
 
     <div class="footer">
         <strong>Capper News</strong> — operated by Paul Mitri.<br>
-        We provide informational SMS notifications related to sports analytics and data alerts. Message frequency varies.
-        Message and data rates may apply. Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
+        We provide informational SMS notifications related to sports analytics and data alerts. 
+        Message frequency varies. Message and data rates may apply. 
+        Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
         Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
     </div>
 </div>
