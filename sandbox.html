@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capper News – Sandbox</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px 30px;
+      max-width: 900px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .fine {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .box {
+      max-width: 560px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      margin: 12px 0 6px;
+    }
+
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 12px;
+    }
+
+    .row input {
+      margin-top: 3px;
+      transform: scale(1.1);
+    }
+
+    button {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #f4f4f4;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #eee;
+    }
+
+    .ok, .err {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .ok {
+      border: 1px solid #bcdcbc;
+      background: #f2fff2;
+    }
+
+    .err {
+      border: 1px solid #f2bcbc;
+      background: #fff2f2;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Sandbox (Private Test Page)</h1>
+<div class="fine">
+  This page is for testing only. It is not linked from the main Capper News site.
+</div>
+
+<div class="box">
+  <strong>Send me your number (one-off contact)</strong>
+  <div class="fine">
+    Submitting this form emails the site owner. It does <strong>not</strong> subscribe you to anything.
+  </div>
+
+  <form id="contactForm" action="https://formspree.io/f/xkongvad" method="POST">
+    
+    <label for="phone">Phone number</label>
+    <input
+      id="phone"
+      type="tel"
+      name="phone"
+      placeholder="(555) 555-5555"
+      required
+    />
+
+    <label for="email">Email (optional)</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      placeholder="you@email.com"
+    />
+
+    <label for="message">Message (optional)</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Anything you want me to know…"
+    ></textarea>
+
+    <!-- OPTIONAL – for wording/testing only, not a subscription -->
+    <div class="row">
+      <input type="checkbox" id="smsConsent" name="smsConsent" value="yes">
+      <label for="smsConsent" class="fine" style="margin:0;">
+        Optional: I agree to receive a <strong>single informational SMS reply</strong>
+        from <strong>Capper News</strong> about this request.
+        Message frequency varies. Msg &amp; data rates may apply.
+        Reply <strong>STOP</strong> to cancel, <strong>HELP</strong> for help.
+      </label>
+    </div>
+
+    <!-- Helpful context in the email -->
+    <input type="hidden" name="source" value="capper.news sandbox test">
+
+    <button type="submit">Submit</button>
+
+    <div id="ok" class="ok">Sent! Check your email.</div>
+    <div id="err" class="err">Something went wrong. Check Formspree setup.</div>
+  </form>
+</div>
+
+<script>
+(function () {
+  const form = document.getElementById("contactForm");
+  const ok = document.getElementById("ok");
+  const err = document.getElementById("err");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    ok.style.display = "none";
+    err.style.display = "none";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        ok.style.display = "block";
+        form.reset();
+      } else {
+        err.style.display = "block";
+      }
+    } catch (ex) {
+      err.style.display = "block";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
