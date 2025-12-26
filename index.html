@@ -79,6 +79,44 @@
             text-decoration: underline;
         }
 
+        /* DEMO OPT-IN BOX (for Toll-Free Verification) */
+        .optin-box{
+            margin-top: 8px;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 6px;
+            max-width: 900px;
+        }
+
+        .optin-title{
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 6px;
+        }
+
+        .optin-row{
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .optin-row input{
+            margin-top: 3px;
+            transform: scale(1.1);
+        }
+
+        .optin-text{
+            font-size: 12px;
+            line-height: 1.35;
+            color: #444;
+        }
+
+        .optin-text a{
+            color: #444;
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .topnav {
                 flex-wrap: wrap;
@@ -87,6 +125,10 @@
             .topnav a {
                 flex: 1 1 auto;
                 text-align: center;
+            }
+
+            .optin-row{
+                gap: 8px;
             }
         }
     </style>
@@ -107,17 +149,37 @@
     </div>
 
     <div class="main">
-        <iframe name="contentFrame" src="Home.html"></iframe>
+        <iframe name="contentFrame" src="Home.html" title="Capper News Content"></iframe>
     </div>
 
-<div class="footer">
-    <strong>Capper News</strong><br>
-    Optional informational SMS alerts related to sports analytics and data alerts.
-    Message frequency varies. Msg &amp; data rates may apply.
-    Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
-    Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
-</div>
+    <div class="footer">
+        <strong>Capper News</strong><br>
+        Optional informational SMS alerts related to sports analytics and data alerts.
+        Message frequency varies. Msg &amp; data rates may apply.
+        Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
+        Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
 
+        <!-- Toll-Free Verification Opt-In Example (Demo / Non-functional) -->
+        <div class="optin-box" aria-label="Capper News SMS Opt-In Example">
+            <div class="optin-title">SMS Opt-In (Optional)</div>
+
+            <div class="optin-row">
+                <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes">
+                <label class="optin-text" for="smsOptIn">
+                    By checking this box, I agree to receive <strong>informational SMS alerts from Capper News</strong>
+                    related to sports analytics and data notifications.<br><br>
+
+                    <strong>SMS is optional and not required</strong> to use Capper News.<br>
+                    Message frequency varies. Msg &amp; data rates may apply.<br>
+                    Reply <strong>STOP</strong> to cancel. Reply <strong>HELP</strong> for help.
+                </label>
+            </div>
+
+            <div class="optin-text" style="margin-top:8px;">
+                (Demo opt-in for messaging compliance verification. This checkbox does not submit your phone number.)
+            </div>
+        </div>
+    </div>
 
 </div>
 
