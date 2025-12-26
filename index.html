@@ -6,136 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
+        html, body { height: 100%; margin: 0; }
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+
+        .container{
+            display:flex;
+            flex-direction:column;
+            height:100%;
         }
 
-        * {
-            box-sizing: border-box;
+        .topnav{
+            background-color:#f4f4f4;
+            display:flex;
+            border-bottom:1px solid #ccc;
+        }
+        .topnav a{
+            text-decoration:none;
+            color:#333;
+            padding:10px 15px;
+            display:block;
+        }
+        .topnav a:hover{ background-color:#ddd; }
+
+        .main{
+            flex:1;
+            overflow:hidden;
+            min-height:0;
+        }
+        iframe{
+            width:100%;
+            height:100%;
+            border:none;
+            display:block;
         }
 
-        body {
-            font-family: Arial, sans-serif;
+        /* Footer */
+        .footer{
+            background:#f9f9f9;
+            border-top:1px solid #ddd;
+            padding:8px 12px;
+            font-size:12px;
+            line-height:1.35;
+            color:#444;
+        }
+        .footer strong{ color:#222; }
+        .footer a{ color:#444; text-decoration:none; }
+        .footer a:hover{ text-decoration:underline; }
+
+        /* Compact disclosure row */
+        .footer-row{
+            display:flex;
+            gap:10px;
+            align-items:center;
+            justify-content:space-between;
+            flex-wrap:wrap;
+        }
+        .footer-left{
+            display:flex;
+            gap:10px;
+            align-items:center;
+            flex-wrap:wrap;
         }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+        /* Twilio Opt-In panel (collapsed by default) */
+        .sms-toggle{
+            cursor:pointer;
+            user-select:none;
+            font-weight:600;
+            text-decoration:underline;
+        }
+        .sms-panel{
+            display:none;            /* collapsed by default */
+            margin-top:8px;
+            padding:10px 12px;
+            border:1px solid #ddd;
+            background:#fff;
+            border-radius:8px;
+            max-width:980px;
+        }
+        .sms-panel.open{ display:block; }
+
+        .sms-title{
+            font-weight:700;
+            color:#222;
+            margin-bottom:6px;
+        }
+        .sms-row{
+            display:flex;
+            gap:10px;
+            align-items:flex-start;
+        }
+        .sms-row input{
+            margin-top:3px;
+            transform:scale(1.1);
+        }
+        .sms-text{
+            font-size:12px;
+            line-height:1.35;
+            color:#444;
+        }
+        .sms-note{
+            margin-top:8px;
+            font-size:11px;
+            color:#666;
         }
 
-        .topnav {
-            background-color: #f4f4f4;
-            display: flex;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .topnav a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 15px;
-            display: block;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-        }
-
-        /* MAIN CONTENT AREA */
-        .main {
-            flex: 1;
-            overflow: hidden;   /* prevents page-level scrollbars */
-            min-height: 0;      /* REQUIRED for iframe in flex */
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;     /* prevents tiny gaps */
-        }
-
-        /* FOOTER / TRUSTHUB DISCLOSURE */
-        .footer {
-            background: #f9f9f9;
-            border-top: 1px solid #ddd;
-            padding: 8px 12px;
-            font-size: 12px;
-            line-height: 1.35;
-            color: #444;
-        }
-
-        .footer strong {
-            color: #222;
-        }
-
-        .footer a {
-            color: #444;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* DEMO OPT-IN BOX (for Toll-Free Verification) */
-        .optin-box{
-            margin-top: 8px;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 6px;
-            max-width: 900px;
-        }
-
-        .optin-title{
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 6px;
-        }
-
-        .optin-row{
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .optin-row input{
-            margin-top: 3px;
-            transform: scale(1.1);
-        }
-
-        .optin-text{
-            font-size: 12px;
-            line-height: 1.35;
-            color: #444;
-        }
-
-        .optin-text a{
-            color: #444;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .topnav {
-                flex-wrap: wrap;
-            }
-
-            .topnav a {
-                flex: 1 1 auto;
-                text-align: center;
-            }
-
-            .optin-row{
-                gap: 8px;
-            }
+        @media (max-width: 768px){
+            .topnav{ flex-wrap:wrap; }
+            .topnav a{ flex:1 1 auto; text-align:center; }
         }
     </style>
 </head>
 
 <body>
-
 <div class="container">
 
     <div class="topnav">
@@ -153,19 +137,28 @@
     </div>
 
     <div class="footer">
-        <strong>Capper News</strong><br>
-        Optional informational SMS alerts related to sports analytics and data alerts.
-        Message frequency varies. Msg &amp; data rates may apply.
-        Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
-        Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
+        <div class="footer-row">
+            <div class="footer-left">
+                <strong>Capper News</strong>
+                <span>Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a></span>
+            </div>
 
-        <!-- Toll-Free Verification Opt-In Example (Demo / Non-functional) -->
-        <div class="optin-box" aria-label="Capper News SMS Opt-In Example">
-            <div class="optin-title">SMS Opt-In (Optional)</div>
+            <!-- Tiny link — doesn’t steal space from your content -->
+            <span class="sms-toggle" id="smsToggle">SMS disclosures / opt-in example</span>
+        </div>
 
-            <div class="optin-row">
+        <!-- Keep a very short, non-intrusive one-liner for general compliance -->
+        <div style="margin-top:4px;">
+            Informational SMS alerts are optional. Message frequency varies. Msg &amp; data rates may apply.
+        </div>
+
+        <!-- Collapsible panel for Twilio screenshot -->
+        <div class="sms-panel" id="smsPanel" aria-label="Capper News SMS Opt-In Example">
+            <div class="sms-title">SMS Opt-In (Optional)</div>
+
+            <div class="sms-row">
                 <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes">
-                <label class="optin-text" for="smsOptIn">
+                <label class="sms-text" for="smsOptIn">
                     By checking this box, I agree to receive <strong>informational SMS alerts from Capper News</strong>
                     related to sports analytics and data notifications.<br><br>
 
@@ -175,13 +168,27 @@
                 </label>
             </div>
 
-            <div class="optin-text" style="margin-top:8px;">
-                (Demo opt-in for messaging compliance verification. This checkbox does not submit your phone number.)
+            <div class="sms-note">
+                Demo opt-in for messaging compliance verification. This checkbox does not submit your phone number.
             </div>
         </div>
     </div>
 
 </div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById("smsToggle");
+        const panel  = document.getElementById("smsPanel");
+
+        toggle.addEventListener("click", function () {
+            const isOpen = panel.classList.toggle("open");
+            toggle.textContent = isOpen
+                ? "Hide SMS disclosures"
+                : "SMS disclosures / opt-in example";
+        });
+    })();
+</script>
 
 </body>
 </html>
