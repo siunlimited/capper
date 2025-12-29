@@ -1,318 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Capper News</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        /* TOP NAV */
-        .topnav {
-            background-color: #f4f4f4;
-            display: flex;
-            border-bottom: 1px solid #ccc;
-            align-items: stretch;
-        }
-
-        .topnav a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 15px;
-            display: block;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-        }
-
-        /* Dropdown menu */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropbtn {
-            display: block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            min-width: 190px;
-            background: #ffffff;
-            border: 1px solid #ccc;
-            z-index: 9999;
-        }
-
-        .dropdown-content a {
-            padding: 10px 12px;
-            display: block;
-            color: #333;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .dropdown-content a:hover {
-            background: #eee;
-        }
-
-        /* Hover to open on desktop */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* MAIN CONTENT */
-        .main {
-            flex: 1;
-            overflow: hidden;   /* prevents page-level scrollbars */
-            min-height: 0;      /* REQUIRED for iframe in flex */
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;     /* prevents tiny gaps */
-        }
-
-        /* FOOTER */
-        .footer {
-            background: #f9f9f9;
-            border-top: 1px solid #ddd;
-            padding: 8px 12px;
-            font-size: 12px;
-            line-height: 1.35;
-            color: #444;
-        }
-
-        .footer a {
-            color: #444;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        /* SMS disclosure toggle */
-        .sms-toggle {
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: underline;
-            user-select: none;
-        }
-
-        /* Collapsible SMS panel */
-        .sms-panel {
-            display: none;
-            margin-top: 8px;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            background: #ffffff;
-            border-radius: 6px;
-            max-width: 980px;
-        }
-
-        .sms-panel.open {
-            display: block;
-        }
-
-        .sms-title {
-            font-weight: bold;
-            margin-bottom: 6px;
-            color: #222;
-        }
-
-        .sms-row {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .sms-row input {
-            margin-top: 3px;
-            transform: scale(1.1);
-        }
-
-        .sms-text {
-            font-size: 12px;
-            line-height: 1.35;
-            color: #444;
-        }
-
-        .sms-note {
-            margin-top: 6px;
-            font-size: 11px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .topnav {
-                flex-wrap: wrap;
-            }
-
-            .topnav a {
-                flex: 1 1 auto;
-                text-align: center;
-            }
-
-            /* On mobile, dropdown should behave like a normal item */
-            .dropdown {
-                flex: 1 1 auto;
-            }
-
-            .dropbtn {
-                text-align: center;
-            }
-
-            .dropdown-content {
-                right: auto;
-                left: 0;
-                width: 100%;
-                min-width: unset;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capper News</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.5; }
+    header { padding: 20px; border-bottom: 1px solid #ddd; }
+    main { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .sms-optin h3 { margin-top: 0; }
+    .sms-disclaimer { font-size: 0.95em; margin-top: 10px; }
+    footer { padding: 20px; border-top: 1px solid #ddd; font-size: 0.95em; }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <header>
+    <h1>Capper News</h1>
+    <p>Sports analytics and data updates.</p>
+  </header>
 
-    <!-- TOP NAV -->
-    <div class="topnav">
-        <a href="NFL_Web.htm" target="contentFrame">NFL</a>
-        <a href="NCAAF_Web.htm" target="contentFrame">CFB</a>
-        <a href="NCAAB_Web.htm" target="contentFrame">NCAAB</a>
-        <a href="NBA_Web.htm" target="contentFrame">NBA</a>
-        <a href="NHL_Web.htm" target="contentFrame">NHL</a>
-        <a href="MLB_Web.htm" target="contentFrame">MLB</a>
-
-        <!-- ABOUT Dropdown -->
-        <div class="dropdown">
-            <a href="About.htm" target="contentFrame" class="dropbtn" id="aboutMenuBtn">
-                ABOUT &#9662;
-            </a>
-            <div class="dropdown-content" id="aboutDropdown">
-                <a href="About.htm" target="contentFrame">About</a>
-                <a href="privacy.html" target="_blank">Privacy Policy</a>
-                <a href="terms.html" target="_blank">Terms &amp; Conditions</a>
-            </div>
-        </div>
+  <main>
+    <div class="card">
+      <h2>What this is</h2>
+      <p>
+        Capper News provides informational sports analytics and data updates.
+        Any SMS alerts are optional and intended to share informational updates.
+      </p>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
-        <iframe name="contentFrame" src="Home.html" title="Capper News Content"></iframe>
+    <!-- ✅ OPTIONAL SMS OPT-IN (Twilio-compliant for 30475) -->
+    <div class="card sms-optin">
+      <h3>Optional SMS Alerts</h3>
+
+      <p>
+        Capper News offers optional SMS alerts for informational sports analytics and data updates.
+        Consent to receive SMS messages is <strong>not required</strong> to use this website or access any content.
+      </p>
+
+      <label>
+        <input type="checkbox" name="sms_opt_in" value="yes">
+        I would like to receive optional SMS alerts from Capper News.
+      </label>
+
+      <p class="sms-disclaimer">
+        Message frequency varies. Msg &amp; data rates may apply.<br>
+        Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.
+      </p>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-
-        <div class="footer-row">
-            <div>
-                <strong>Capper News</strong> ·
-                <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
-            </div>
-
-            <div>
-                <a href="privacy.html" target="_blank">Privacy Policy</a> |
-                <a href="terms.html" target="_blank">Terms &amp; Conditions</a> |
-                <span class="sms-toggle" id="smsToggle">SMS disclosures</span>
-            </div>
-        </div>
-
-        <div style="margin-top:4px;">
-            Optional informational SMS alerts. Message frequency varies. Msg &amp; data rates may apply.
-        </div>
-
-        <!-- Collapsible SMS Disclosure Panel -->
-        <div class="sms-panel" id="smsPanel" aria-label="Capper News SMS Opt-In Example">
-            <div class="sms-title">SMS Opt-In (Optional)</div>
-
-            <div class="sms-row">
-                <input type="checkbox" id="smsOptIn">
-                <label for="smsOptIn" class="sms-text">
-                    By checking this box, I agree to receive <strong>informational SMS alerts from Capper News</strong>
-                    related to sports analytics and data notifications.<br><br>
-
-                    <strong>SMS is optional and not required</strong> to use Capper News.<br>
-                    Message frequency varies. Msg &amp; data rates may apply.<br>
-                    Reply <strong>STOP</strong> to cancel. Reply <strong>HELP</strong> for help.
-                </label>
-            </div>
-
-            <div class="sms-note">
-                Demo opt-in shown for messaging compliance verification only.
-                This checkbox does not submit a phone number.
-            </div>
-        </div>
-
+    <div class="card">
+      <h2>Contact</h2>
+      <p>
+        Questions? Email: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
+      </p>
     </div>
-</div>
+  </main>
 
-<script>
-    (function () {
-        // SMS disclosures toggle
-        const smsToggle = document.getElementById("smsToggle");
-        const smsPanel = document.getElementById("smsPanel");
-
-        smsToggle.addEventListener("click", function () {
-            smsPanel.classList.toggle("open");
-            smsToggle.textContent = smsPanel.classList.contains("open")
-                ? "Hide SMS disclosures"
-                : "SMS disclosures";
-        });
-
-        // Mobile-friendly About dropdown (tap to open)
-        const aboutBtn = document.getElementById("aboutMenuBtn");
-        const aboutMenu = document.getElementById("aboutDropdown");
-
-        aboutBtn.addEventListener("click", function (e) {
-            if (window.matchMedia("(max-width: 768px)").matches) {
-                e.preventDefault(); // prevent navigation on mobile tap
-                aboutMenu.style.display = (aboutMenu.style.display === "block") ? "none" : "block";
-            }
-        });
-
-        // Close About dropdown on outside tap (mobile)
-        document.addEventListener("click", function (e) {
-            if (window.matchMedia("(max-width: 768px)").matches) {
-                if (!e.target.closest(".dropdown")) {
-                    aboutMenu.style.display = "none";
-                }
-            }
-        });
-    })();
-</script>
-
+  <footer>
+    <strong>Capper News</strong><br>
+    Optional informational SMS alerts related to sports analytics.<br>
+    Message frequency varies. Msg &amp; data rates may apply.<br>
+    Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
+    Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
+  </footer>
 </body>
 </html>
