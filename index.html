@@ -8,31 +8,47 @@
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.5; }
     header { padding: 20px; border-bottom: 1px solid #ddd; }
     main { padding: 20px; max-width: 900px; margin: 0 auto; }
+    nav a { margin-right: 14px; text-decoration: none; }
     .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
     .sms-optin h3 { margin-top: 0; }
     .sms-disclaimer { font-size: 0.95em; margin-top: 10px; }
     footer { padding: 20px; border-top: 1px solid #ddd; font-size: 0.95em; }
+    h2 { margin-top: 0; }
+    ul { margin-top: 8px; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 22px 0; }
+    .small { font-size: 0.95em; }
+    .muted { color: #333; }
   </style>
 </head>
 
 <body>
   <header>
     <h1>Capper News</h1>
-    <p>Sports analytics and data updates.</p>
+    <p class="muted">Sports analytics and data updates.</p>
+
+    <nav class="small">
+      <a href="#home">Home</a>
+      <a href="#sms">SMS Alerts</a>
+      <a href="#about">About</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <div class="card">
+    <!-- HOME -->
+    <section id="home" class="card">
       <h2>What this is</h2>
       <p>
-        Capper News provides informational sports analytics and data updates.
+        Capper News provides informational sports analytics and data updates across major sports leagues.
         Any SMS alerts are optional and intended to share informational updates.
       </p>
-    </div>
+    </section>
 
     <!-- ✅ OPTIONAL SMS OPT-IN (Twilio-compliant for 30475) -->
-    <div class="card sms-optin">
-      <h3>Optional SMS Alerts</h3>
+    <section id="sms" class="card sms-optin">
+      <h2>Optional SMS Alerts</h2>
 
       <p>
         Capper News offers optional SMS alerts for informational sports analytics and data updates.
@@ -48,14 +64,120 @@
         Message frequency varies. Msg &amp; data rates may apply.<br>
         Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.
       </p>
-    </div>
 
-    <div class="card">
+      <hr>
+
+      <h3>SMS Messaging Disclosure &amp; Consent</h3>
+      <p>
+        Capper News offers optional informational SMS alerts related to sports analytics and data notifications.
+        No text messages are sent without user-initiated opt-in.
+      </p>
+
+      <p><strong>Opt-In Method:</strong><br>
+        Users may opt in through the website using an unchecked checkbox that is clearly labeled as optional.
+        SMS is not required to use Capper News.
+      </p>
+
+      <p><strong>Consent:</strong><br>
+        By opting in, you expressly consent to receive informational text messages from Capper News.
+        Message frequency varies.
+      </p>
+
+      <p><strong>Opt-Out Instructions:</strong><br>
+        Reply <strong>STOP</strong> at any time to cancel. Reply <strong>HELP</strong> for help.
+        Msg &amp; data rates may apply.
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="card">
+      <h2>About Capper News</h2>
+      <p>
+        Capper News provides sports analytics updates and optional informational SMS alerts.
+        Our goal is to deliver timely, data-driven insights across major sports leagues including NFL, CFB, NCAAB,
+        NBA, NHL, and MLB.
+      </p>
+
+      <h3>Who Operates Capper News</h3>
+      <p>
+        Capper News is owned and operated by <strong>Paul Mitri</strong> in Lockport, New York.
+      </p>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="card">
+      <h2>Privacy Policy</h2>
+      <p><strong>Capper News</strong> (“we,” “us,” or “our”) respects your privacy.</p>
+
+      <h3>Information We Collect</h3>
+      <ul>
+        <li><strong>Website:</strong> We do not intentionally collect personal information through the website unless you email us directly.</li>
+        <li><strong>SMS:</strong> If you opt in to receive SMS alerts, we may process your phone number solely to deliver those alerts and manage opt-out/help requests.</li>
+      </ul>
+
+      <h3>How We Use Information</h3>
+      <ul>
+        <li>To deliver optional informational SMS alerts you requested (opt-in required).</li>
+        <li>To provide support and respond to inquiries.</li>
+        <li>To comply with legal and carrier requirements (e.g., honoring STOP/HELP).</li>
+      </ul>
+
+      <h3>SMS Privacy</h3>
+      <p>
+        SMS consent is optional and not required to use Capper News.
+        Message frequency varies. Msg &amp; data rates may apply.
+        Reply <strong>STOP</strong> to cancel. Reply <strong>HELP</strong> for help.
+      </p>
+      <p><strong>We do not sell or share SMS opt-in information or phone numbers for marketing purposes.</strong></p>
+
+      <h3>Third Parties</h3>
+      <p>
+        We may use service providers (such as messaging platforms) only to deliver the services you requested.
+      </p>
+
+      <p class="small">Last updated: <span id="privacyUpdated"></span></p>
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms" class="card">
+      <h2>Terms &amp; Conditions</h2>
+      <p>These Terms govern your use of <strong>Capper News</strong>.</p>
+
+      <h3>Informational Content</h3>
+      <p>
+        Capper News provides sports analytics and informational updates. Content is provided “as is” for informational purposes only.
+      </p>
+
+      <h3>Optional SMS Alerts</h3>
+      <p>
+        Capper News may offer optional informational SMS alerts. <strong>SMS is optional and not required</strong> to use the site.
+      </p>
+      <ul>
+        <li>Message frequency varies.</li>
+        <li>Msg &amp; data rates may apply.</li>
+        <li>Reply <strong>STOP</strong> to cancel.</li>
+        <li>Reply <strong>HELP</strong> for help.</li>
+      </ul>
+
+      <h3>User Responsibilities</h3>
+      <p>You agree not to misuse the website or attempt to disrupt its operation.</p>
+
+      <h3>Changes</h3>
+      <p>We may update these Terms from time to time by posting an updated version on this site.</p>
+
+      <p class="small">Last updated: <span id="termsUpdated"></span></p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card">
       <h2>Contact</h2>
       <p>
         Questions? Email: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
       </p>
-    </div>
+      <p class="small muted">
+        Location: Lockport, NY, USA
+      </p>
+    </section>
   </main>
 
   <footer>
@@ -65,5 +187,12 @@
     Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
     Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
   </footer>
+
+  <script>
+    // Optional: show "last updated" on-page (not required for Twilio)
+    const d = new Date().toLocaleDateString();
+    document.getElementById("privacyUpdated").textContent = d;
+    document.getElementById("termsUpdated").textContent = d;
+  </script>
 </body>
 </html>
