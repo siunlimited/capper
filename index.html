@@ -1,165 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Capper News</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Betting Percentages</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.5; }
-    header { padding: 20px; border-bottom: 1px solid #ddd; }
-    main { padding: 20px; max-width: 900px; margin: 0 auto; }
-    nav a { margin-right: 14px; text-decoration: none; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
-    footer { padding: 20px; border-top: 1px solid #ddd; font-size: 0.95em; }
-    h2 { margin-top: 0; }
-    ul { margin-top: 8px; }
-    hr { border: none; border-top: 1px solid #ddd; margin: 22px 0; }
-    .small { font-size: 0.95em; }
-    .muted { color: #333; }
-  </style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .topnav {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .topnav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+        }
+
+        .main {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .topnav {
+                flex-wrap: wrap;
+            }
+
+            .topnav a {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <h1>Capper News</h1>
-    <p class="muted">Sports analytics and data updates.</p>
 
-    <nav class="small">
-      <a href="#home">Home</a>
-      <a href="#dashboards">Dashboards</a>
-      <a href="#sms">SMS Alerts</a>
-      <a href="#about">About</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#terms">Terms</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- HOME -->
-    <section id="home" class="card">
-      <h2>What this is</h2>
-      <p>
-        Capper News provides informational sports analytics and data updates across major sports leagues.
-        Any SMS alerts are optional and intended to share informational updates.
-      </p>
-    </section>
-
-    <!-- DASHBOARDS -->
-    <section id="dashboards" class="card">
-      <h2>Sports Dashboards</h2>
-      <ul>
-        <li><a href="NFL_Web.htm">NFL Betting Percentages</a></li>
-        <li><a href="NCAAF_Web.htm">NCAAF Betting Percentages</a></li>
-        <li><a href="NBA_Web.htm">NBA Betting Percentages</a></li>
-        <li><a href="NCAAB_Web.htm">NCAAB Betting Percentages</a></li>
-        <li><a href="NHL_Web.htm">NHL Betting Percentages</a></li>
-        <li><a href="MLB_Web.htm">MLB Betting Percentages</a></li>
-      </ul>
-    </section>
-
-    <!-- OPTIONAL SMS OPT-IN (Twilio 30475 SAFE) -->
-    <section id="sms" class="card">
-      <h2>Optional SMS Alerts</h2>
-
-      <p>
-        Capper News offers optional SMS alerts for informational sports analytics and data updates.
-        Consent to receive SMS messages is <strong>not required</strong> to use this website or access any content.
-      </p>
-
-      <label>
-        <input type="checkbox" name="sms_opt_in" value="yes">
-        I would like to receive optional SMS alerts from Capper News.
-      </label>
-
-      <p class="small">
-        Message frequency varies. Msg &amp; data rates may apply.<br>
-        Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.
-      </p>
-
-      <hr>
-
-      <p>
-        No text messages are sent without user-initiated opt-in.
-        SMS consent is optional and not a condition of using Capper News.
-      </p>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="card">
-      <h2>About Capper News</h2>
-      <p>
-        Capper News provides sports analytics updates and optional informational SMS alerts.
-        Our goal is to deliver timely, data-driven insights across NFL, CFB, NCAAB, NBA, NHL, and MLB.
-      </p>
-
-      <p>
-        Capper News is owned and operated by <strong>Paul Mitri</strong> in Lockport, New York.
-      </p>
-    </section>
-
-    <!-- PRIVACY -->
-    <section id="privacy" class="card">
-      <h2>Privacy Policy</h2>
-
-      <p>
-        We respect your privacy. We do not sell or share personal information.
-      </p>
-
-      <ul>
-        <li>No personal data is collected through the website.</li>
-        <li>Phone numbers are used only to deliver optional SMS alerts.</li>
-        <li>SMS consent is optional and not required to use the site.</li>
-      </ul>
-
-      <p class="small">
-        Msg &amp; data rates may apply. Reply <strong>STOP</strong> to cancel.
-      </p>
-    </section>
-
-    <!-- TERMS -->
-    <section id="terms" class="card">
-      <h2>Terms &amp; Conditions</h2>
-
-      <p>
-        Capper News provides informational sports analytics only.
-        Content is provided “as is” with no guarantees.
-      </p>
-
-      <p>
-        Optional SMS alerts may be offered. SMS is not required to use this site.
-      </p>
-
-      <ul>
-        <li>Message frequency varies</li>
-        <li>Msg &amp; data rates may apply</li>
-        <li>Reply <strong>STOP</strong> to unsubscribe</li>
-        <li>Reply <strong>HELP</strong> for help</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
-      </p>
-      <p class="small muted">
-        Lockport, NY, USA
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <strong>Capper News</strong><br>
-    Optional informational SMS alerts related to sports analytics.<br>
-    Message frequency varies. Msg &amp; data rates may apply.<br>
-    Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help.<br>
-    Contact: <a href="mailto:paulmitri@gmail.com">paulmitri@gmail.com</a>
-  </footer>
+<div class="container">
+    <div class="topnav">
+        <a href="NFL_Web.htm" target="contentFrame">NFL</a>
+        <a href="NCAAF_Web.htm" target="contentFrame">CFB</a>
+        <a href="NCAAB_Web.htm" target="contentFrame">NCAAB</a>
+        <a href="NBA_Web.htm" target="contentFrame">NBA</a>
+        <a href="NHL_Web.htm" target="contentFrame">NHL</a>
+        <a href="MLB_Web.htm" target="contentFrame">MLB</a>
+    </div>
+    <div class="main">
+        <iframe name="contentFrame" src="Home.html"></iframe>
+    </div>
+</div>
 
 </body>
 </html>
