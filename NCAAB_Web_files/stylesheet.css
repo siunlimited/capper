@@ -41,6 +41,10 @@ br
 	border:none;
 	mso-protection:locked visible;
 	mso-style-name:"Normal 2";}
+.style98
+	{mso-number-format:0%;
+	mso-style-name:Percent;
+	mso-style-id:5;}
 td
 	{mso-style-parent:style0;
 	padding-top:1px;
@@ -762,24 +766,15 @@ td
 	border-bottom:.5pt solid windowtext;
 	border-left:.5pt solid windowtext;}
 .xl136
-	{mso-style-parent:style16;
-	color:black;
-	mso-number-format:0%;
-	text-align:center;
-	border-top:1.0pt solid windowtext;
-	border-right:1.0pt solid windowtext;
-	border-bottom:.5pt solid windowtext;
-	border-left:.5pt solid windowtext;}
-.xl137
 	{mso-style-parent:style0;
 	color:white;
 	mso-number-format:0%;
 	text-align:center;}
-.xl138
+.xl137
 	{mso-style-parent:style0;
 	color:white;
 	mso-number-format:0%;}
-.xl139
+.xl138
 	{mso-style-parent:style0;
 	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
 	text-align:center;
@@ -789,7 +784,7 @@ td
 	border-left:none;
 	background:#DDEBF7;
 	mso-pattern:black none;}
-.xl140
+.xl139
 	{mso-style-parent:style0;
 	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
 	text-align:center;
@@ -799,3 +794,27 @@ td
 	border-left:none;
 	background:#DDEBF7;
 	mso-pattern:black none;}
+.xl140
+	{mso-style-parent:style98;
+	mso-number-format:0%;
+	text-align:center;}
+.xl141
+	{mso-style-parent:style16;
+	color:black;
+	mso-number-format:0%;
+	text-align:center;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;}
+.xl142
+	{mso-style-parent:style98;
+	mso-number-format:0%;
+	text-align:center;
+	border:.5pt solid windowtext;}
+.xl143
+	{mso-style-parent:style16;
+	color:windowtext;
+	font-size:10.0pt;
+	text-align:center;
+	white-space:normal;}
