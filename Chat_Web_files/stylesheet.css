@@ -4,7 +4,7 @@ col
 	{mso-width-source:auto;}
 br
 	{mso-data-placement:same-cell;}
-.style83
+.style17
 	{mso-number-format:"_\(\0022$\0022* \#\,\#\#0\.00_\)\;_\(\0022$\0022* \\\(\#\,\#\#0\.00\\\)\;_\(\0022$\0022* \0022-\0022??_\)\;_\(\@_\)";
 	mso-style-name:Currency;
 	mso-style-id:4;}
@@ -183,7 +183,7 @@ td
 	mso-number-format:"Short Date";
 	text-align:center;}
 .xl91
-	{mso-style-parent:style83;
+	{mso-style-parent:style17;
 	font-size:9.0pt;
 	mso-number-format:"0\.00_\)\;\[Red\]\\\(0\.00\\\)";
 	text-align:center;
@@ -211,7 +211,7 @@ td
 	background:#E2EFDA;
 	mso-pattern:black none;}
 .xl95
-	{mso-style-parent:style83;
+	{mso-style-parent:style17;
 	font-size:9.0pt;
 	mso-number-format:"0\.00_\)\;\[Red\]\\\(0\.00\\\)";
 	text-align:center;
