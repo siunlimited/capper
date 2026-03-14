@@ -230,51 +230,24 @@ td
 	mso-pattern:black none;}
 .xl97
 	{mso-style-parent:style0;
+	font-weight:700;
 	text-align:left;
-	border-top:1.0pt solid windowtext;
+	border-top:none;
 	border-right:none;
-	border-bottom:1.0pt solid windowtext;
-	border-left:1.0pt solid windowtext;
-	background:#DDEBF7;
+	border-bottom:1.5pt solid windowtext;
+	border-left:none;
+	background:#D9D9D9;
 	mso-pattern:black none;}
 .xl98
 	{mso-style-parent:style0;
-	text-align:left;
-	border-top:1.0pt solid windowtext;
+	font-weight:700;
+	border-top:none;
 	border-right:none;
-	border-bottom:1.0pt solid windowtext;
+	border-bottom:1.5pt solid windowtext;
 	border-left:none;
-	background:#DDEBF7;
+	background:#D9D9D9;
 	mso-pattern:black none;}
 .xl99
-	{mso-style-parent:style0;
-	text-align:left;
-	border-top:1.0pt solid windowtext;
-	border-right:1.0pt solid windowtext;
-	border-bottom:1.0pt solid windowtext;
-	border-left:none;
-	background:#DDEBF7;
-	mso-pattern:black none;}
-.xl100
-	{mso-style-parent:style0;
-	font-weight:700;
-	text-align:left;
-	border-top:none;
-	border-right:none;
-	border-bottom:1.5pt solid windowtext;
-	border-left:none;
-	background:#D9D9D9;
-	mso-pattern:black none;}
-.xl101
-	{mso-style-parent:style0;
-	font-weight:700;
-	border-top:none;
-	border-right:none;
-	border-bottom:1.5pt solid windowtext;
-	border-left:none;
-	background:#D9D9D9;
-	mso-pattern:black none;}
-.xl102
 	{mso-style-parent:style0;
 	font-weight:700;
 	text-align:center;
@@ -284,7 +257,7 @@ td
 	border-left:none;
 	background:#D9D9D9;
 	mso-pattern:black none;}
-.xl103
+.xl100
 	{mso-style-parent:style0;
 	font-size:9.0pt;
 	font-weight:700;
@@ -296,3 +269,30 @@ td
 	background:#D9D9D9;
 	mso-pattern:black none;
 	white-space:normal;}
+.xl101
+	{mso-style-parent:style0;
+	text-align:left;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#DDEBF7;
+	mso-pattern:black none;}
+.xl102
+	{mso-style-parent:style0;
+	text-align:left;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#DDEBF7;
+	mso-pattern:black none;}
+.xl103
+	{mso-style-parent:style0;
+	text-align:left;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#DDEBF7;
+	mso-pattern:black none;}
