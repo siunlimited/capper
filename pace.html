@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Pace Calculator</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --card-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --good: #22c55e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #020617, #0f172a);
+      color: var(--text);
+      padding: 24px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+    }
+
+    p.sub {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+
+    .row {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card-2);
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .big {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--good);
+      margin: 6px 0;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Game Pace Calculator</h1>
+    <p class="sub">Enter elapsed game time and current scores. Projections update instantly as you type.</p>
+
+    <div class="grid" id="cards"></div>
+
+    <div class="footer">
+      Time can be entered as <code>mm:ss</code> or just minutes like <code>18</code> or <code>18.5</code>.
+      For sports with clock quirks, this is still a simple straight-line pace estimate.
+    </div>
+  </div>
+
+  <script>
+    const sports = [
+      { key: 'nba', name: 'NBA', totalMinutes: 48 },
+      { key: 'cbb', name: 'CBB', totalMinutes: 40 },
+      { key: 'nfl', name: 'NFL', totalMinutes: 60 },
+      { key: 'nhl', name: 'NHL', totalMinutes: 60 },
+      { key: 'mlb', name: 'MLB (9 innings)', totalMinutes: 54 }
+    ];
+
+    const cardsEl = document.getElementById('cards');
+
+    function buildCard(sport) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h2>${sport.name}</h2>
+
+        <div class="row">
+          <label>Total Game Length (minutes)</label>
+          <input type="number" step="0.1" value="${sport.totalMinutes}" data-role="length" />
+        </div>
+
+        <div class="row">
+          <label>Elapsed Time</label>
+          <input type="text" placeholder="Example: 18:30 or 18.5" data-role="elapsed" />
+        </div>
+
+        <div class="row">
+          <label>Home Score</label>
+          <input type="number" step="1" min="0" value="" data-role="home" />
+        </div>
+
+        <div class="row">
+          <label>Away Score</label>
+          <input type="number" step="1" min="0" value="" data-role="away" />
+        </div>
+
+        <div class="result">
+          <div class="small">Projected final total</div>
+          <div class="big" data-role="pace">—</div>
+          <div class="small" data-role="detail">Enter elapsed time and scores to calculate pace.</div>
+        </div>
+      `;
+
+      const inputs = card.querySelectorAll('input');
+      inputs.forEach(input => input.addEventListener('input', () => updateCard(card)));
+      updateCard(card);
+      return card;
+    }
+
+    function parseElapsedToMinutes(value) {
+      if (!value || !value.trim()) return null;
+      const raw = value.trim();
+
+      if (raw.includes(':')) {
+        const parts = raw.split(':');
+        if (parts.length !== 2) return null;
+        const mins = Number(parts[0]);
+        const secs = Number(parts[1]);
+        if (Number.isNaN(mins) || Number.isNaN(secs) || secs < 0 || secs >= 60 || mins < 0) return null;
+        return mins + secs / 60;
+      }
+
+      const num = Number(raw);
+      if (Number.isNaN(num) || num < 0) return null;
+      return num;
+    }
+
+    function round1(num) {
+      return Math.round(num * 10) / 10;
+    }
+
+    function updateCard(card) {
+      const length = Number(card.querySelector('[data-role="length"]').value);
+      const elapsed = parseElapsedToMinutes(card.querySelector('[data-role="elapsed"]').value);
+      const home = Number(card.querySelector('[data-role="home"]').value || 0);
+      const away = Number(card.querySelector('[data-role="away"]').value || 0);
+      const paceEl = card.querySelector('[data-role="pace"]');
+      const detailEl = card.querySelector('[data-role="detail"]');
+
+      if (!length || Number.isNaN(length) || length <= 0) {
+        paceEl.textContent = '—';
+        detailEl.textContent = 'Game length must be greater than 0.';
+        return;
+      }
+
+      if (elapsed === null || elapsed <= 0) {
+        paceEl.textContent = '—';
+        detailEl.textContent = 'Enter elapsed time and scores to calculate pace.';
+        return;
+      }
+
+      if (elapsed > length) {
+        paceEl.textContent = '—';
+        detailEl.textContent = 'Elapsed time cannot exceed total game length.';
+        return;
+      }
+
+      const currentTotal = home + away;
+      const projectedTotal = (currentTotal / elapsed) * length;
+      const homeProjection = (home / elapsed) * length;
+      const awayProjection = (away / elapsed) * length;
+
+      paceEl.textContent = round1(projectedTotal);
+      detailEl.textContent = `Current total: ${currentTotal} | Home pace: ${round1(homeProjection)} | Away pace: ${round1(awayProjection)}`;
+    }
+
+    sports.forEach(sport => cardsEl.appendChild(buildCard(sport)));
+  </script>
+</body>
+</html>
