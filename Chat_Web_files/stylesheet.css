@@ -271,7 +271,6 @@ td
 	white-space:normal;}
 .xl101
 	{mso-style-parent:style0;
-	text-align:left;
 	border-top:1.0pt solid windowtext;
 	border-right:none;
 	border-bottom:1.0pt solid windowtext;
@@ -280,7 +279,8 @@ td
 	mso-pattern:black none;}
 .xl102
 	{mso-style-parent:style0;
-	text-align:left;
+	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	text-align:center;
 	border-top:1.0pt solid windowtext;
 	border-right:none;
 	border-bottom:1.0pt solid windowtext;
@@ -289,7 +289,8 @@ td
 	mso-pattern:black none;}
 .xl103
 	{mso-style-parent:style0;
-	text-align:left;
+	mso-number-format:"\[$-409\]h\:mm\\ AM\/PM\;\@";
+	text-align:center;
 	border-top:1.0pt solid windowtext;
 	border-right:1.0pt solid windowtext;
 	border-bottom:1.0pt solid windowtext;
